@@ -3,19 +3,17 @@ import os
 
 FILE = "records.json"
 
-# Load records from file
 def load_records():
     if os.path.exists(FILE):
         with open(FILE, "r") as f:
             return json.load(f)
     return {}
 
-# Save records to file
 def save_records(data):
     with open(FILE, "w") as f:
         json.dump(data, f, indent=4)
 
-# Add record
+
 def add_record(data):
     sid = input("Enter Student ID: ")
     if sid in data:
@@ -27,7 +25,7 @@ def add_record(data):
     save_records(data)
     print("Record saved successfully!")
 
-# View records
+
 def view_records(data):
     if not data:
         print("No records found.")
@@ -37,7 +35,7 @@ def view_records(data):
         print("Name:", info["Name"])
         print("Marks:", info["Marks"])
 
-# Search record
+
 def search_record(data):
     sid = input("Enter Student ID to search: ")
     if sid in data:
@@ -46,7 +44,7 @@ def search_record(data):
     else:
         print("Record not found.")
 
-# Delete record
+
 def delete_record(data):
     sid = input("Enter Student ID to delete: ")
     if sid in data:
@@ -56,7 +54,7 @@ def delete_record(data):
     else:
         print("Record not found.")
 
-# Main menu
+
 def main():
     data = load_records()
 
