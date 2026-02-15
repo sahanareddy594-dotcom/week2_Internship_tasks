@@ -1,4 +1,3 @@
-# Functions for operations
 def add(a, b):
     return a + b
 
@@ -14,7 +13,7 @@ def divide(a, b):
     return a / b
 
 
-# Main program
+
 while True:
     print("\n===== CALCULATOR =====")
     print("1. Addition")
